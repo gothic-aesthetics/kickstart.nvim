@@ -114,4 +114,64 @@ return {
       }
     end,
   },
+
+  {
+    'epwalsh/obsidian.nvim',
+    lazy = true,
+    ft = 'markdown',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    opts = {
+      workspaces = {
+        {
+          name = 'main workspace',
+          path = '~/Documents/obsidian-workspace/',
+        },
+      },
+    },
+    mappings = {
+      ['fo'] = {
+        action = function()
+          return require('obsidian').util.gf_passthrough()
+        end,
+        opts = { noremap = false, expr = true, buffer = true },
+      },
+    },
+  },
+
+  {
+    'chaimleib/vim-renpy',
+    lazy = false,
+    priority = 100,
+  },
+
+  {
+    'rebelot/kanagawa.nvim',
+    priority = 1000,
+
+    config = function()
+      require('kanagawa').setup {
+        theme = 'wave',
+        background = {
+          dark = 'wave',
+          light = 'lotus',
+        },
+      }
+    end,
+
+    init = function()
+      -- Load the colorscheme here.
+      -- Like many other themes, this one has different styles, and you could load
+      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+      vim.cmd.colorscheme 'kanagawa-dragon'
+
+      -- You can configure highlights by doing something like:
+      vim.cmd.hi 'Comment gui=none'
+    end,
+  },
+
+  {
+    'xero/evangelion.nvim',
+    lazy = false,
+    priority = 100,
+  },
 }
