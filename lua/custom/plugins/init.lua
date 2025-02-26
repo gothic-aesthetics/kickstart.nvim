@@ -54,18 +54,6 @@ return {
   },
 
   {
-    'https://gitlab.com/pandark/42header-vim',
-    lazy = false,
-    priority = 100,
-    cmd = {
-      'FortyTwoHeader',
-    },
-    keys = {
-      { '<leader>tf', '<cmd>FortyTwoHeader<cr>', mode = 'n', desc = '42 header' },
-    },
-  },
-
-  {
     'folke/trouble.nvim',
     opts = {},
     cmd = 'Trouble',
@@ -101,18 +89,6 @@ return {
         desc = 'Quickfix List (Trouble)',
       },
     },
-  },
-
-  {
-    'hardyrafael17/norminette42.nvim',
-    config = function()
-      local norminette = require 'norminette'
-      norminette.setup {
-        runOnSave = true,
-        maxErrorsToShow = 10,
-        active = true,
-      }
-    end,
   },
 
   {

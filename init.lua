@@ -619,6 +619,29 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
+        csharp_ls = {},
+        omnisharp = {
+          cmd = { 'dotnet', 'C:\\Program Files\\Omnisharp\\OmniSharp.dll' },
+
+          filetypes = { 'cs', 'vb' },
+          settings = {
+            FormattingOptions = {
+              EnableEditorConfigSupport = true,
+              OrganizeImports = true,
+            },
+            MsBuild = {
+              LoadProjectsOnDemand = false,
+            },
+            RoslynExtensionsOptions = {
+              EnableAnalyzersSupport = true,
+              EnableImportCompletion = true,
+              AnalyzeOpenDocumentsOnly = true,
+            },
+            Sdk = {
+              IncludePrereleases = true,
+            },
+          },
+        },
 
         lua_ls = {
           -- cmd = {...},
@@ -890,7 +913,23 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = {
+        'bash',
+        'c',
+        'diff',
+        'html',
+        'lua',
+        'luadoc',
+        'markdown',
+        'markdown_inline',
+        'query',
+        'vim',
+        'vimdoc',
+        'c_sharp',
+        'cpp',
+        'zig',
+        'powershell',
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
