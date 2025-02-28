@@ -619,7 +619,6 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
-        csharp_ls = {},
         omnisharp = {
           cmd = { 'dotnet', 'C:\\Program Files\\Omnisharp\\OmniSharp.dll' },
 
@@ -630,7 +629,7 @@ require('lazy').setup({
               OrganizeImports = true,
             },
             MsBuild = {
-              LoadProjectsOnDemand = false,
+              LoadProjectsOnDemand = true,
             },
             RoslynExtensionsOptions = {
               EnableAnalyzersSupport = true,
@@ -642,6 +641,8 @@ require('lazy').setup({
             },
           },
         },
+
+        csharp_ls = {},
 
         lua_ls = {
           -- cmd = {...},
