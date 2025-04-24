@@ -9,7 +9,7 @@ return {
     persist_mode = true,
     close_on_exit = true,
     autochdir = false,
-    open_mapping = [[<c-\>]],
+    open_mapping = [[<c-t>]],
     direction = 'float',
   },
 }

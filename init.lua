@@ -91,7 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -104,6 +104,7 @@ vim.opt.number = true
 --  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = true
 
+vim.opt.conceallevel = 2
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
@@ -619,31 +620,6 @@ require('lazy').setup({
         -- But for many setups, the LSP (`ts_ls`) will work just fine
         -- ts_ls = {},
         --
-        omnisharp = {
-          cmd = { 'dotnet', 'C:\\Program Files\\Omnisharp\\OmniSharp.dll' },
-
-          filetypes = { 'cs', 'vb' },
-          settings = {
-            FormattingOptions = {
-              EnableEditorConfigSupport = true,
-              OrganizeImports = true,
-            },
-            MsBuild = {
-              LoadProjectsOnDemand = true,
-            },
-            RoslynExtensionsOptions = {
-              EnableAnalyzersSupport = true,
-              EnableImportCompletion = true,
-              AnalyzeOpenDocumentsOnly = true,
-            },
-            Sdk = {
-              IncludePrereleases = true,
-            },
-          },
-        },
-
-        csharp_ls = {},
-
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
